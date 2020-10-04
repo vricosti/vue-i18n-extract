@@ -316,10 +316,34 @@ export const expectedFromParsedLanguageFiles = {
 };
 
 export const expectedI18NReport = {
-  missingKeys: [
+  missingKeys:  [
+    {
+      path: 'header.titles.title_a',
+      line: 1,
+      file: '/tests/unit/fixtures/vue-files/file1.js',
+      language: 'de_DE'
+    },
     {
       path: 'missing.a',
       line: 2,
+      file: '/tests/unit/fixtures/vue-files/file1.js',
+      language: 'de_DE'
+    },
+    {
+      path: 'header.steps[0]',
+      line: 3,
+      file: '/tests/unit/fixtures/vue-files/file1.js',
+      language: 'de_DE'
+    },
+    {
+      path: 'header.titles.title_a',
+      line: 4,
+      file: '/tests/unit/fixtures/vue-files/file1.js',
+      language: 'de_DE'
+    },
+    {
+      path: 'header.titles.title_a',
+      line: 5,
       file: '/tests/unit/fixtures/vue-files/file1.js',
       language: 'de_DE'
     },
@@ -360,9 +384,21 @@ export const expectedI18NReport = {
       language: 'de_DE'
     },
     {
+      path: 'header.titles.title_b',
+      line: 1,
+      file: '/tests/unit/fixtures/vue-files/file2.js',
+      language: 'de_DE'
+    },
+    {
       path: 'missing.b',
       line: 2,
       file: '/tests/unit/fixtures/vue-files/file2.js',
+      language: 'de_DE'
+    },
+    {
+      path: 'Key As Fallback',
+      line: 1,
+      file: '/tests/unit/fixtures/vue-files/file3.vue',
       language: 'de_DE'
     },
     {
@@ -396,6 +432,12 @@ export const expectedI18NReport = {
       language: 'de_DE'
     },
     {
+      path: 'header.titles.title_c',
+      line: 1,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'de_DE'
+    },
+    {
       path: 'missing.c',
       line: 2,
       file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
@@ -404,6 +446,36 @@ export const expectedI18NReport = {
     {
       path: 'missing.d',
       line: 4,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'de_DE'
+    },
+    {
+      path: 'missing.e',
+      line: 7,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'de_DE'
+    },
+    {
+      path: 'missing.f',
+      line: 10,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'de_DE'
+    },
+    {
+      path: 'header.paragraphs.p_a',
+      line: 3,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'de_DE'
+    },
+    {
+      path: 'header.paragraphs.p_b',
+      line: 6,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'de_DE'
+    },
+    {
+      path: 'header.paragraphs.p_c',
+      line: 9,
       file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
       language: 'de_DE'
     },
@@ -529,6 +601,30 @@ export const expectedI18NReport = {
     },
     {
       path: 'missing.e',
+      line: 7,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'en_EN'
+    },
+    {
+      path: 'missing.f',
+      line: 10,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'en_EN'
+    },
+    {
+      path: 'header.paragraphs.p_b',
+      line: 6,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'en_EN'
+    },
+    {
+      path: 'header.paragraphs.p_c',
+      line: 9,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'en_EN'
+    },
+    {
+      path: 'missing.e',
       line: 2,
       file: '/tests/unit/fixtures/vue-files/folder/folder 2/file4.vue',
       language: 'en_EN'
@@ -644,6 +740,30 @@ export const expectedI18NReport = {
     {
       path: 'missing.d',
       line: 4,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'fr_FR'
+    },
+    {
+      path: 'missing.e',
+      line: 7,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'fr_FR'
+    },
+    {
+      path: 'missing.f',
+      line: 10,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'fr_FR'
+    },
+    {
+      path: 'header.paragraphs.p_b',
+      line: 6,
+      file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
+      language: 'fr_FR'
+    },
+    {
+      path: 'header.paragraphs.p_c',
+      line: 9,
       file: '/tests/unit/fixtures/vue-files/folder/file3.vue',
       language: 'fr_FR'
     },
