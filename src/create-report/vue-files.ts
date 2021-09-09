@@ -66,8 +66,13 @@ function* getMatches (file: SimpleFile, regExp: RegExp, captureGroup = 1): Itera
  * @param file a file object
  * @returns a list of translation keys found in `file`.
  */
- function extractMethodMatches (file: SimpleFile): I18NItemWithBounding[] {
-  const methodRegExp = /(?:[$ ."'`]t[cm]?)\(\s*?(["'`])((?:[^\\]|\\.)*?)\1/g;
+ function extractMethodMatches (file: SimpleFile, methodName: string): I18NItemWithBounding[] {
+  const defMethodRegExp = /(?:[$ ."'`]t[cm]?)\(\s*?(["'`])((?:[^\\]|\\.)*?)\1/g;
+  let methodRegExp = defMethodRegExp;
+  if (methodName) {
+    methodRegExp = new RegExp(defMethodRegExp.toString().replace('t',methodName).slice(1,-1));
+  }
+  
   return [ ...getMatches(file, methodRegExp, 2) ];
 }
 
@@ -81,9 +86,9 @@ function extractDirectiveMatches (file: SimpleFile): I18NItemWithBounding[] {
   return [ ...getMatches(file, directiveRegExp) ];
 }
 
-export function extractI18NItemsFromVueFiles (sourceFiles: SimpleFile[]): I18NItemWithBounding[] {
+export function extractI18NItemsFromVueFiles (sourceFiles: SimpleFile[], methodName = ''): I18NItemWithBounding[] {
   return sourceFiles.reduce((accumulator, file) => {
-    const methodMatches = extractMethodMatches(file);
+    const methodMatches = extractMethodMatches(file, methodName);
     const componentMatches = extractComponentMatches(file);
     const directiveMatches = extractDirectiveMatches(file);
     return [
@@ -96,6 +101,6 @@ export function extractI18NItemsFromVueFiles (sourceFiles: SimpleFile[]): I18NIt
 }
 
 // This is a convenience function for users implementing in their own projects, and isn't used internally
-export function parseVueFiles (vueFiles: string): I18NItemWithBounding[] {
-  return extractI18NItemsFromVueFiles(readVueFiles(vueFiles));
+export function parseVueFiles (vueFiles: string, methodName = ''): I18NItemWithBounding[] {
+  return extractI18NItemsFromVueFiles(readVueFiles(vueFiles), methodName);
 }

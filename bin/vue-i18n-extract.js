@@ -35,6 +35,10 @@ cli
     '--separator <separator>',
     'Use if you want to override the separator used when parsing locale identifiers. Default is `.`'
    )
+   .option(
+    '--methodName <methodName>',
+    'Use if you want to override the default vue-i18n method name. Default is `t`.'
+   )
   .action((options) => {
     createI18NReport(resolveConfig(options));
   });
